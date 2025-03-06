@@ -1,6 +1,6 @@
 <h1 align="center">
-  <a href="https://github.com/Alamnzr123/frontend_test2">
-   Front-end Test for PT IXXoXXXiXXX
+  <a href="https://github.com/Alamnzr123/test-tsp-fe">
+   Front-end Test for PT TXX
   </a>
   <br />
 </h1>
@@ -9,7 +9,7 @@
 
 To run Application you need install Backend and Frontend side, which is Mandatory
 This repo include Frontend that buid using ReactJS. For Backend clone this Repo
-**https://github.com/Alamnzr123/backendtest_2**
+**https://github.com/Alamnzr123/test-tsp-be**
 
 
 ## Getting Started
