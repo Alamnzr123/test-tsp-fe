@@ -3,6 +3,8 @@ import {
     GET_DEPARTMENT,
     GET_JABATANS,
     GET_JABATAN,
+    GET_OPERATORS,
+    GET_OPERATOR,
     GET_KARYAWANS,
     GET_KARYAWAN,
     GET_JABATAN_BY_DEPARTMENT,
@@ -10,6 +12,46 @@ import {
 } from "./actionType";
 import axios from "axios";
 const server = "http://localhost:3000";
+
+
+export const editOperator = (operatorId, operator) => {
+    return async dispatch => {
+        try {
+            const { data } = await axios.put(`${server}/operator/${operatorId}`, operator);
+            dispatch(GET_OPERATORS());
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const getOperators = () => {
+    return async dispatch => {
+        try {
+            const { data } = await axios.get(`${server}/operator`);
+            dispatch({
+                type: GET_OPERATORS,
+                payload: data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const getOperator = (operatorId) => {
+    return async dispatch => {
+        try {
+            const { data } = await axios.get(`${server}/operator/${operatorId}`);
+            dispatch({
+                type: GET_OPERATOR,
+                payload: data
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 
 export const getKaryawans = () => {
     return async dispatch => {

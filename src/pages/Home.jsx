@@ -4,6 +4,7 @@ import {
     getDepartments,
     getJabatans,
     getKaryawans,
+    getOperators
 } from "../store/actionCreator";
 import { Link } from "react-router-dom";
 
@@ -12,11 +13,13 @@ const Home = () => {
     const { departments } = useSelector((state) => state.departmentReducer);
     const { jabatans } = useSelector((state) => state.jabatanReducer);
     const { karyawans } = useSelector((state) => state.karyawanReducer);
+    const { operators } = useSelector((state) => state.operatorReducer);
 
     useEffect(() => {
         dispatch(getDepartments());
         dispatch(getJabatans());
         dispatch(getKaryawans());
+        dispatch(getOperators());
     }, []);
 
     return (
@@ -55,6 +58,19 @@ const Home = () => {
                         <Link to="/department">
                             <button className="btn btn-primary">
                                 to Department
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Total Operator</h2>
+                    <p>{operators.length}</p>
+                    <div className="card-actions justify-end">
+                        <Link to="/operator">
+                            <button className="btn btn-primary">
+                                to Operator
                             </button>
                         </Link>
                     </div>

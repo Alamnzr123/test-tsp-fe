@@ -4,5 +4,7 @@ export const GET_JABATANS = "GET_JABATANS";
 export const GET_JABATAN = "GET_JABATAN";
 export const GET_JABATAN_BY_DEPARTMENT = "GET_JABATAN_BY_DEPARTMENT";
 export const GET_KARYAWANS = "GET_KARYAWANS";
+export const GET_OPERATORS = "GET_OPERATORS";
+export const GET_OPERATOR = "GET_OPERATOR";
 export const GET_KARYAWAN = "GET_KARYAWAN";
 export const IS_EDIT = "IS_EDIT";

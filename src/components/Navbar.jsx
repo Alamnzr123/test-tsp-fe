@@ -38,11 +38,11 @@ const Navbar = () => {
                         <li>
                             <Link to="/department">Department</Link>
                         </li>
+                        <li>
+                            <Link to="/operator">Operator</Link>
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <div className="navbar-center">
-                <Link to={'/'} className="btn btn-ghost normal-case text-xl">2025</Link>
             </div>
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">
