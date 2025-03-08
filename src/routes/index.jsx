@@ -1,7 +1,8 @@
 import React from 'react'
-import { createBrowserRouter, redirect } from 'react-router-dom'
+import { createBrowserRouter, Link, redirect } from 'react-router-dom'
 import MainLayout from '../layouts/MainLayout'
 import Home from '../pages/Home'
+import Login from '../pages/Login'
 import Karyawan from '../pages/Karyawan'
 import Operator from '../pages/Operator'
 import Jabatan from '../pages/Jabatan'
@@ -11,11 +12,16 @@ import AddEditOperator from '../pages/AddEditOperator'
 import AddJabatan from '../pages/AddJabatan'
 import AddDepartment from '../pages/AddDepartment'
 
+
 const router = createBrowserRouter([
     {
         element: <MainLayout />,
         children: [
-            { path: '/', element: <Home /> },
+            { path: '/', element: <Login /> },
+            {
+                path: '/home', element:
+                    <Home />
+            },
             {
                 path: '/karyawan',
                 element: <Karyawan />,

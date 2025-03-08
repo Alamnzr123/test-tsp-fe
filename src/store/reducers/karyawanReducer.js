@@ -23,7 +23,6 @@ export const karyawanReducer = (state = initialState, action) => {
                 ...state,
                 karyawan: action.payload
             }
-
         case IS_EDIT:
             return {
                 ...state,

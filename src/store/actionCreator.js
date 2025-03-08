@@ -17,8 +17,24 @@ const server = "http://localhost:3000";
 export const editOperator = (operatorId, operator) => {
     return async dispatch => {
         try {
-            const { data } = await axios.put(`${server}/operator/${operatorId}`, operator);
+            const { data } = await axios.put(`${server}/operator/${operatorId}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            }, operator);
             dispatch(GET_OPERATORS());
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const createToken = (body) => {
+    return async dispatch => {
+        try {
+            const { data } = await axios.post(`${server}/karyawan/authenticate`, body);
+            console.log(data.token);
+            localStorage.setItem('token', data.token)
         } catch (error) {
             console.log(error);
         }
@@ -28,7 +44,11 @@ export const editOperator = (operatorId, operator) => {
 export const getOperators = () => {
     return async dispatch => {
         try {
-            const { data } = await axios.get(`${server}/operator`);
+            const { data } = await axios.get(`${server}/operator`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
             dispatch({
                 type: GET_OPERATORS,
                 payload: data
@@ -42,7 +62,11 @@ export const getOperators = () => {
 export const getOperator = (operatorId) => {
     return async dispatch => {
         try {
-            const { data } = await axios.get(`${server}/operator/${operatorId}`);
+            const { data } = await axios.get(`${server}/operator/${operatorId}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
             dispatch({
                 type: GET_OPERATOR,
                 payload: data
@@ -96,9 +120,6 @@ export const getJabatans = () => {
 }
 
 export const getJabatanByDepartment = (departmentId) => {
-    // console.log('====================================');
-    // console.log(departmentId);
-    // console.log('====================================');
     return async dispatch => {
         try {
             const { data } = await axios.get(`${server}/jabatan/department/${departmentId}`);
