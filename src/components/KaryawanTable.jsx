@@ -37,15 +37,15 @@ const KaryawanTable = () => {
             <div>
                 <table className="table table-zebra w-full">
                     {/* head */}
-                    <thead className="text-xs font-semibold tracking-wide text-black uppercase border-b bg-gray-50 text-center">
+                    <thead className="text-xs font-semibold tracking-wide text-zinc-200 uppercase border-b bg-gray-50 text-center">
                         <tr>
-                            <th></th>
+                            <th>Nomor</th>
                             <th>Name</th>
                             <th>id_jabatan</th>
-                            <th>age</th>
-                            <th>gender</th>
-                            <th>tanggal_lahir</th>
-                            <th>alamat</th>
+                            <th>Work Order</th>
+                            <th>Nama Produk</th>
+                            <th>Status</th>
+                            <th>Jumlah</th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -58,10 +58,10 @@ const KaryawanTable = () => {
                                 <td>{index + 1}</td>
                                 <td>{karyawan.name}</td>
                                 <td>{karyawan.id_jabatan}</td>
-                                <td>{karyawan.age}</td>
-                                <td>{karyawan.gender}</td>
-                                <td>{karyawan.tanggal_lahir}</td>
-                                <td>{karyawan.alamat}</td>
+                                <td>{karyawan.work_order}</td>
+                                <td>{karyawan.nama_product}</td>
+                                <td>{karyawan.status}</td>
+                                <td>{karyawan.jumlah}</td>
                                 <td>
                                     <Link
                                         to={`/add-edit-karyawan/${karyawan.id}`}

@@ -17,7 +17,8 @@ const router = createBrowserRouter([
     {
         element: <MainLayout />,
         children: [
-            { path: '/', element: <Login /> },
+            { path: '/', element: <Department /> },
+            { path: '/login', element: <Login /> },
             {
                 path: '/home', element:
                     <Home />
@@ -44,7 +45,6 @@ const router = createBrowserRouter([
             },
             { path: '/jabatan', element: <Jabatan /> },
             { path: '/add-jabatan', element: <AddJabatan /> },
-            { path: '/department', element: <Department /> },
             { path: '/add-department', element: <AddDepartment /> },
             { path: '*', element: redirect('/404') },
         ],

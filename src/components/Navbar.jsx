@@ -27,7 +27,7 @@ const Navbar = () => {
                         className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
                     >
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/home">Home</Link>
                         </li>
                         <li>
                             <Link to="/karyawan">Karyawan</Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
                             <Link to="/jabatan">Jabatan</Link>
                         </li>
                         <li>
-                            <Link to="/department">Department</Link>
+                            <Link to="/">Department</Link>
                         </li>
                         <li>
                             <Link to="/operator">Operator</Link>

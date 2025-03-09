@@ -58,7 +58,7 @@ const Home = () => {
                         <h2 className="card-title">Total Department</h2>
                         <p>{departments.length}</p>
                         <div className="card-actions justify-end">
-                            <Link to="/department">
+                            <Link to="/">
                                 <button className="btn btn-primary">
                                     to Department
                                 </button>

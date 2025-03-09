@@ -33,6 +33,11 @@ const AddEditKaryawan = () => {
         table_jabatan: {
             id_department: "",
         },
+        work_order: "",
+        nama_product: "",
+        jumlah: "",
+        tenggat_waktu: "",
+        status: ""
     });
 
     const [department, setDepartment] = useState("");
@@ -60,6 +65,11 @@ const AddEditKaryawan = () => {
             table_jabatan: {
                 id_department: "",
             },
+            work_order: "",
+            nama_product: "",
+            jumlah: "",
+            tenggat_waktu: "",
+            status: ""
         });
         dispatch({
             type: IS_EDIT,
@@ -87,6 +97,11 @@ const AddEditKaryawan = () => {
                 tanggal_lahir: karyawan.tanggal_lahir,
                 alamat: karyawan.alamat,
                 table_jabatan: karyawan.table_jabatan,
+                work_order: karyawan.work_order,
+                nama_product: karyawan.nama_product,
+                jumlah: karyawan.jumlah,
+                tenggat_waktu: karyawan.tenggat_waktu,
+                status: karyawan.status
             });
 
             if (karyawan.table_jabatan?.id_department) {
@@ -203,7 +218,6 @@ const AddEditKaryawan = () => {
                                 required
                             />
                         </div>
-
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Role</span>
@@ -217,10 +231,156 @@ const AddEditKaryawan = () => {
                                         role: e.target.value,
                                     })
                                 }
-                                defaultValue={isEdit ? newKaryawan.age : "Role"}
+                                defaultValue={isEdit ? newKaryawan.role : "Role"}
                                 required
                             />
                         </div>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Work Order</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered w-full max-w-xs"
+                                onChange={(e) =>
+                                    setNewKaryawan({
+                                        ...newKaryawan,
+                                        work_order: e.target.value,
+                                    })
+                                }
+                                defaultValue={isEdit ? newKaryawan.work_order : "Work Order"}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Nama Product</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered w-full max-w-xs"
+                                onChange={(e) =>
+                                    setNewKaryawan({
+                                        ...newKaryawan,
+                                        nama_product: e.target.value,
+                                    })
+                                }
+                                defaultValue={isEdit ? newKaryawan.nama_product : "Nama Produk"}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Jumlah</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered w-full max-w-xs"
+                                onChange={(e) =>
+                                    setNewKaryawan({
+                                        ...newKaryawan,
+                                        jumlah: e.target.value,
+                                    })
+                                }
+                                defaultValue={isEdit ? newKaryawan.jumlah : "Jumlah"}
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Tenggat Waktu</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="input input-bordered w-full max-w-xs"
+                                onChange={(e) =>
+                                    setNewKaryawan({
+                                        ...newKaryawan,
+                                        tenggat_waktu: e.target.value,
+                                    })
+                                }
+                                defaultValue={isEdit ? newKaryawan.tenggat_waktu : "Tenggat Waktu"}
+                                required
+                            />
+                        </div>
+
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Status</span>
+                            </label>
+                            <div className="form-control flex flex-col">
+                                <label className="label cursor-pointer w-14">
+                                    <span className="label-text">Completed</span>
+                                    <input
+                                        type="radio"
+                                        name="radio-10"
+                                        value={"Completed"}
+                                        className="radio checked:bg-red-500"
+                                        onChange={(e) => {
+                                            // console.log(e.target.value);
+                                            setNewKaryawan({
+                                                ...newKaryawan,
+                                                status: e.target.value,
+                                            });
+                                        }}
+                                        checked={newKaryawan.status == "Completed"}
+                                    />
+                                </label>
+                                <label className="label cursor-pointer w-14">
+                                    <span className="label-text">Pending</span>
+                                    <input
+                                        type="radio"
+                                        name="radio-10"
+                                        value={"Pending"}
+                                        className="radio checked:bg-red-500"
+                                        onChange={(e) => {
+                                            // console.log(e.target.value);
+                                            setNewKaryawan({
+                                                ...newKaryawan,
+                                                status: e.target.value,
+                                            });
+                                        }}
+                                        checked={newKaryawan.status == "Pending"}
+                                    />
+                                </label>
+
+
+                                <label className="label cursor-pointer w-14">
+                                    <span className="label-text">OnProgress</span>
+                                    <input
+                                        type="radio"
+                                        name="radio-10"
+                                        value={"OnProgress"}
+                                        className="radio checked:bg-blue-500"
+                                        onChange={(e) => {
+                                            // console.log(e.target.value);
+                                            setNewKaryawan({
+                                                ...newKaryawan,
+                                                status: e.target.value,
+                                            });
+                                        }}
+                                        checked={newKaryawan.status == "OnProgress"}
+                                    />
+                                </label>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <div className="flex flex-col w-1/2 gap-4">
                         <div>
@@ -229,11 +389,11 @@ const AddEditKaryawan = () => {
                             </label>
                             <div className="form-control flex flex-col">
                                 <label className="label cursor-pointer w-14">
-                                    <span className="label-text">L</span>
+                                    <span className="label-text">Female</span>
                                     <input
                                         type="radio"
                                         name="radio-10"
-                                        value={"L"}
+                                        value={"Female"}
                                         className="radio checked:bg-red-500"
                                         onChange={(e) => {
                                             // console.log(e.target.value);
@@ -242,15 +402,15 @@ const AddEditKaryawan = () => {
                                                 gender: e.target.value,
                                             });
                                         }}
-                                        checked={newKaryawan.gender == "L"}
+                                        checked={newKaryawan.gender == "Female"}
                                     />
                                 </label>
                                 <label className="label cursor-pointer w-14">
-                                    <span className="label-text">P</span>
+                                    <span className="label-text">Male</span>
                                     <input
                                         type="radio"
                                         name="radio-10"
-                                        value={"P"}
+                                        value={"Male"}
                                         className="radio checked:bg-blue-500"
                                         onChange={(e) => {
                                             // console.log(e.target.value);
@@ -259,11 +419,12 @@ const AddEditKaryawan = () => {
                                                 gender: e.target.value,
                                             });
                                         }}
-                                        checked={newKaryawan.gender == "P"}
+                                        checked={newKaryawan.gender == "Male"}
                                     />
                                 </label>
                             </div>
                         </div>
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">

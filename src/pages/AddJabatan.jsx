@@ -18,7 +18,6 @@ const AddJabatan = () => {
     }, []);
 
     const handleAddJabatan = () => {
-        // console.log(newJabatan);
         dispatch(addJabatan(newJabatan));
         navigate("/jabatan");
     }

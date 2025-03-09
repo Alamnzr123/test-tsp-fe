@@ -6,7 +6,7 @@ import {
 import Home from "./Home";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [tokenJWT, setTokenJWT] = React.useState('')
@@ -23,7 +23,7 @@ const Login = () => {
       setTokenJWT(token)
       navigate("/home");
     } else {
-      navigate("/login");
+      navigate("/");
     }
   }, []);
 
@@ -44,7 +44,7 @@ const Login = () => {
             <form className="form-control">
               <input className="input-group-lg"
                 type="text"
-                placeholder="Username"
+                placeholder="Name"
                 onChange={(e) => {
                   setNewKaryawan({
                     ...newKaryawan,
@@ -66,4 +66,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Register;
